@@ -1,6 +1,12 @@
 import { defineConfig } from 'vite';
+
 export default defineConfig({
   server: {
-    port: 3000, // Frontend server port
+    port: 5001, // Frontend server port
   },
+  build: {
+    outDir: 'dist', // Ensure output directory is set
+  },
+  root: './', // Explicitly set root
+  publicDir: 'public', // Ensure Vite knows where to find public assets
 });

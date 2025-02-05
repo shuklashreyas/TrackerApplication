@@ -1,7 +1,6 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
-const authRoutes = require('./routes/authroutes');
-const eventRoutes = require('./routes/eventroutes');
 
 const app = express();
 
@@ -17,9 +16,17 @@ mongoose.connect('mongodb://localhost:27017/tracker-app')
 // Middleware
 app.use(express.json());
 
+// Serve static files from the Vite build
+app.use(express.static(path.join(__dirname, '../dist')));
+
 // Routes
+const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
-app.use('/api', eventRoutes);
+
+// Handle all other routes by serving the index.html file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 
 // Start the server
 const PORT = 5001;
