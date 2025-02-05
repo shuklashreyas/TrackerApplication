@@ -8,7 +8,8 @@
     "start": "node server/index.js",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "tailwind": "tailwindcss"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,13 @@
   },
   "homepage": "https://github.com/shuklashreyas/TrackerApplication#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.3",
     "vite": "^6.0.11"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.3",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
@@ -32,6 +37,6 @@
     "moment": "^2.30.1",
     "mongoose": "^8.9.6",
     "react-big-calendar": "^1.17.1",
-    "react-router-dom": "^7.1.4"
+    "react-router-dom": "^7.1.5"
   }
 }
