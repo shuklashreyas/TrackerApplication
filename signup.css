@@ -1,0 +1,100 @@
+/* signup.css */
+
+/* Background and Centering */
+.signup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #FF6A00, #EE0979);
+  }
+  
+  /* Signup Box */
+  .signup-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+  }
+  
+  /* Titles */
+  .signup-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .signup-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+  }
+  
+  .signup-form label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .signup-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  /* Signup Button */
+  .signup-form button {
+    width: 100%;
+    background: #FF6A00;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .signup-form button:hover {
+    background: #D45C00;
+  }
+  
+  /* Error Message */
+  .signup-error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer Text */
+  .signup-footer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Login Link */
+  .login-link {
+    color: #FF6A00;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '/Users/shreyas/Desktop/TrackerProject/src/styles.css';
+import "/Users/shreyas/Desktop/TrackerProject/login.css"; 
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +14,9 @@ const Login = () => {
     try {
       const response = await fetch("/api/auth/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ email, password }),
       });
 
@@ -33,28 +35,41 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h1>Login</h1>
-      {error && <p className="error-message">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          placeholder="Enter your email"
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          placeholder="Enter your password"
-        />
-        <button type="submit">Login</button>
-      </form>
-      <p>
-        Don't have an account? <a href="/signup">Sign up here</a>
-      </p>
+      <div className="login-box">
+        <h1 className="login-title">TrackerHub</h1>
+        <h2 className="login-subtitle">Login</h2>
+
+        {error && <p className="login-error">{error}</p>}
+
+        <form onSubmit={handleSubmit} className="login-form">
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            placeholder="Enter your email"
+          />
+
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder="Enter your password"
+          />
+
+          <button type="submit">Login</button>
+        </form>
+
+        <p className="login-footer">
+          Don't have an account?{" "}
+          <a href="/signup" className="signup-link">
+            Sign up here
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
