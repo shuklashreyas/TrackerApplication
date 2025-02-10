@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Calendar from './components/Calendar';
 import ProtectedRoute from './components/ProtectedRoute';
+import "./index.css";
 
 function App() {
   return (
