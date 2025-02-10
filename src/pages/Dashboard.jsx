@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Calendar = () => {
+const Dashboard = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -11,11 +11,11 @@ const Calendar = () => {
 
   return (
     <div>
-      <h1>Calendar</h1>
+      <h1>Dashboard</h1>
+      <p>Welcome to your dashboard!</p>
       <button onClick={handleLogout}>Logout</button>
-      {/* Your calendar UI */}
     </div>
   );
 };
 
-export default Calendar;
+export default Dashboard;
