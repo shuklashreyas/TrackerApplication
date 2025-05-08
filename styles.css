@@ -1,0 +1,18 @@
+.quiz-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quiz-question {
+    margin-bottom: 1rem;
+  }
+  
+  .quiz-results {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
