@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "/Users/shreyas/Desktop/TrackerProject/login.css"; // Adjust path if necessary
+import "/Users/shreyas/Desktop/TrackerProject/login.css"; // Adjust if needed
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,28 +10,23 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-  
+
     try {
-      console.log("Sending login request..."); // Debug log
-      const response = await fetch("http://localhost:5001/api/auth/login", {
+      const response = await fetch("http://localhost:8000/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-  
-      console.log("Response received:", response); // Debug log
+
       const data = await response.json();
-      console.log("Response data:", data); // Debug log
-  
       if (response.ok) {
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("userEmail", data.email); // or token if added
         navigate("/dashboard");
       } else {
-        setError(data.error || "Login failed");
+        setError(data.detail || "Login failed.");
       }
-    } catch (error) {
-      console.error("Error during login:", error); // Debug log
-      setError("An error occurred. Please try again.");
+    } catch (err) {
+      setError("Server error. Please try again.");
     }
   };
 
@@ -41,7 +36,7 @@ const Login = () => {
         <h1 className="login-title">TrackerHub</h1>
         <h2 className="login-subtitle">Login</h2>
 
-        {error && <p className="login-error">{error}</p>} {/* Display error message */}
+        {error && <p className="login-error">{error}</p>}
 
         <form onSubmit={handleLogin} className="login-form">
           <label>Email:</label>
@@ -50,7 +45,7 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            placeholder="Enter your email"
+            placeholder="Enter email"
           />
 
           <label>Password:</label>
@@ -59,7 +54,7 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            placeholder="Enter your password"
+            placeholder="Enter password"
           />
 
           <button type="submit">Login</button>
@@ -67,9 +62,7 @@ const Login = () => {
 
         <p className="login-footer">
           Don't have an account?{" "}
-          <a href="/signup" className="signup-link">
-            Sign up here
-          </a>
+          <a href="/signup" className="signup-link">Sign up here</a>
         </p>
       </div>
     </div>

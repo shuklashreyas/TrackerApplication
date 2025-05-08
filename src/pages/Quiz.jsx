@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { traits } from "../data/quizData";
-// import syles.css
-
+import "/Users/shreyas/Desktop/TrackerProject/styles.css";
 
 
 const Quiz = () => {

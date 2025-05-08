@@ -4,6 +4,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Calendar from "./components/Calendar";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Quiz from "./pages/Quiz";
 import "./index.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         {/* Public routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/quiz" element={<Quiz />} />
 
         {/* Protected routes */}
         <Route
